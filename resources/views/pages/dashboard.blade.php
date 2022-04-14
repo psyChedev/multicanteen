@@ -14,78 +14,25 @@
     	<div class="row">
     		<!-- page statustic chart start -->
             @can('manage_canteen')
+            @foreach ($final_data as $key=>$value)
             <div class="col-xl-3 col-md-6">
-                <div class="card card-red text-white">
+                <div class="card card-blue text-white h-100">
                     <div class="card-block">
                         <div class="row align-items-center">
                             <div class="col-8">
-                                <h4 class="mb-0"><?php echo 25*10;?></h4>
-                                <p class="mb-0">{{ __('Products')}}</p>
+                                <h4 class="mb-0">{{$value}}</h4>
+                                <p class="mb-0">{{$temp['product'][$key]->Product_Name}}</p>
                             </div>
                             <div class="col-4 text-right">
-                                <i class="fas fa-cube f-30"></i>
+                                <img src="{{$temp['product'][$key]->Product_Image}}" alt="" width=100% class=" rounded-circle">
                             </div>
                         </div>
-                        <div id="Widget-line-chart1" class="chart-line chart-shadow"></div>
                     </div>
                 </div>
             </div>
+            @endforeach
             @endcan
-            @can('manage_ingredients')
-            <div class="col-xl-3 col-md-6">
-                <div class="card card-blue text-white">
-                    <div class="card-block">
-                        <div class="row align-items-center">
-                            <div class="col-8">
-                                <h4 class="mb-0">{{ __('3,612')}}</h4>
-                                <p class="mb-0">{{ __('Ingredients')}}</p>
-                            </div>
-                            <div class="col-4 text-right">
-                                <i class="ik ik-shopping-cart f-30"></i>
-                            </div>
-                        </div>
-                        <div id="Widget-line-chart2" class="chart-line chart-shadow" ></div>
-                    </div>
-                </div>
-            </div>
-            @endcan
-            @can('manage_user')
-            <div class="col-xl-3 col-md-6">
-                <div class="card card-green text-white">
-                    <div class="card-block">
-                        <div class="row align-items-center">
-                            <div class="col-8">
-                                <h4 class="mb-0">{{ __('865')}}</h4>
-                                <p class="mb-0">{{ __('Customers')}}</p>
-                            </div>
-                            <div class="col-4 text-right">
-                                <i class="ik ik-user f-30"></i>
-                            </div>
-                        </div>
-                        <div id="Widget-line-chart3" class="chart-line chart-shadow"></div>
-                    </div>
-                </div>
-            </div>
-            @endcan
-            @can('manage_sales')
-            <div class="col-xl-3 col-md-6">
-                <div class="card card-yellow text-white">
-                    <div class="card-block">
-                        <div class="row align-items-center">
-                            <div class="col-8">
-                                <h4 class="mb-0">{{ __('35,500')}}</h4>
-                                <p class="mb-0">{{ __('Sales')}}</p>
-                            </div>
-                            <div class="col-4 text-right">
-                                <i class="ik f-30">৳</i>
-                            </div>
-                        </div>
-                        <div id="Widget-line-chart4" class="chart-line chart-shadow" ></div>
-                    </div>
-                </div>
-            </div>
-            @endcan
-            <!-- page statustic chart end -->
+                       <!-- page statustic chart end -->
             <!-- sale 2 card start 
             <div class="col-md-6 col-xl-4">
                 <div class="card sale-card">

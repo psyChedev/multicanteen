@@ -13,6 +13,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CanteenController;
 use App\Http\Controllers\IngredientsController;
 use App\Http\Controllers\PhiController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +46,7 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/clear-cache', [HomeController::class,'clearCache']);
 
 	// dashboard route  
-	Route::get('/dashboard', function () { 
-		return view('pages.dashboard'); 
-	})->name('dashboard');
+	Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
 
 	//only those have manage_user permission will get access
 	Route::group(['middleware' => 'can:manage_user'], function(){
