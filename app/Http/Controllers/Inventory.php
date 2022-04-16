@@ -7,12 +7,13 @@ use App\Models\phi;
 use App\Models\Product;
 use App\Models\Ingredients;
 
-class DashboardController extends Controller
+class Inventory extends Controller
 {
-    public function index()
-    {   
+    public function index($p)
+    {
         $phis = phi::all();
         $products = Product::all();
+        // dd();
         $final_data = [];
         $temp=[];
         $temp_product=[];
@@ -31,7 +32,6 @@ class DashboardController extends Controller
         foreach ($phis as $phi) {
             foreach ($ingredients as $ingredient) {
                 if ($phi->ingredient_id == $ingredient->id) {
-                    
                     $temp['ingredient'][$count] = $ingredient;
                     $count++;
                 }
@@ -49,11 +49,12 @@ class DashboardController extends Controller
                     else if($ingredient->measurement == 'pcs') {
                         $temp['measurement'][$phi->product_id][$count] = ceil($temp1/$phi->quantity);
                     }
-                }
+                    
+            }   
+            }
+            $count++;
         }
-        $count++;
-    }
-    $count=0;
+        $count=0;
         foreach ($temp['measurement'] as $tmp) {
                 $final_data[$count] = min($tmp);
                 $count++;
@@ -65,6 +66,7 @@ class DashboardController extends Controller
         }
         $temp['product']=array_values(array_unique($temp_product, SORT_REGULAR));
         $temp['measurement'] = $final_data;
-        return view('pages.dashboard', compact('phi','product','ingredients','final_data','temp'));
+        //dd($temp);
+        return view('invent.index',compact('phi','product','ingredients','final_data','temp','p'));
     }
 }

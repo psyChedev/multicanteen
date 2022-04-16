@@ -14,6 +14,7 @@ use App\Http\Controllers\CanteenController;
 use App\Http\Controllers\IngredientsController;
 use App\Http\Controllers\PhiController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Inventory;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +68,7 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::post('/product/store', [ProductController::class,'store'])->name('product.store');
 		Route::get('/phi/add/{id}', [PhiController::class,'index'])->name('phi.add');
 		Route::post('/phi/store', [PhiController::class,'store'])->name('phi.store');
+		Route::get('/inventory/{id}', [Inventory::class,'index'])->name('inventory.view');
 	});
 
 	//only those have manage_role permission will get access

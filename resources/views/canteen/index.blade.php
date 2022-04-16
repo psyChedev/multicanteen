@@ -70,9 +70,9 @@
                                     <td>
                                         <div class="table-actions float-left">
                                             <a href="{{route('canteen.edt',$canteen)}}"><i class="ik ik-edit-2"></i></a>
-                                            <a href="{{route('ingredient.add',$canteen)}}"><button class="btn btn-success">Add Ingredient</button></a>
-                                            <a href="{{route('product.add',$canteen)}}"><button class="btn btn-warning">Add Product</button></a>
-                                           
+                                            <a href="{{route('ingredient.add',$canteen)}}"><button class="btn btn-success">Add/View Ingredient</button></a>
+                                            <a href="{{route('product.add',$canteen)}}"><button class="btn btn-warning">Add/View Product</button></a>
+                                            <a href="{{route('inventory.view',$canteen)}}"><button class="btn btn-warning">View Inventory</button></a>
                                             <!--<a href="#"><i class="ik ik-trash-2"></i></a>-->
                                         </div>
                                     </td>
