@@ -48,43 +48,10 @@
                     </div>
                 </div>
                 @endrole
-                @can('manage_ingredients')
                 
-                <div class="nav-item {{ ($segment1 == 'Add Product' || $segment1 == 'Add Ingredients') ? 'active open' : '' }} has-sub">
-                    <a href="#"><i class="ik ik-truck"></i><span>{{ __('Products')}}</span></a>
-                    <div class="submenu-content">
-                        <!-- only those have manage_user permission will get access -->
-                        @can('manage_products')
-                        <a href="{{url('product/add')}}" class="menu-item {{ ($segment1 == 'product') ? 'active' : '' }}">{{ __('Add Product')}}</a>
-                        @endcan
-                        <a href="{{url('ingredient/add')}}" class="menu-item {{ ($segment1 == 'user' && $segment2 == 'create') ? 'active' : '' }}">{{ __('Add Ingredient')}}</a>
-                         
-                         <!-- only those have manage_role permission will get access -->
-                        
-                    </div>
-                </div>
-                    
-                @endcan
-                @can('manage_canteen')
                 
-                <div class="nav-item {{ ($segment1 == 'Payment Recieved' || $segment1 == 'Waste Management' || $segment1 == 'Create Report') ? 'active open' : '' }} has-sub">
-                    <a href="#"><i class="ik ik-truck"></i><span>{{ __('Manage Canteen')}}</span></a>
-                    <div class="submenu-content">
-                        <!-- only those have manage_user permission will get access -->
-                       
-                        <a href="{{url('canteen/payment')}}" class="menu-item {{ ($segment1 == 'payment') ? 'active' : '' }}">{{ __('Payments Recieved')}}</a>
-                        
-                        <a href="{{url('canteen/waste')}}" class="menu-item {{ ($segment1 == 'canteen' && $segment2 == 'waste') ? 'active' : '' }}">{{ __('Waste MAnagement')}}</a>
-                        
-                        <a href="{{url('canteen/sales')}}" class="menu-item {{ ($segment1 == 'sales') ? 'active' : '' }}">{{ __('Sales Report')}}</a>
-                         <!-- only those have manage_role permission will get access -->
-                        
-                    </div>
-                </div>
-                    
-                @endcan
                 @role('Super Admin')
-                <div class="nav-lavel">{{ __('Documentation')}} </div>
+                <!--<div class="nav-lavel">{{ __('Documentation')}} </div>
                 <div class="nav-item {{ ($segment1 == 'rest-api') ? 'active' : '' }}">
                     <a href="{{url('rest-api')}}"><i class="ik ik-cloud"></i><span>{{ __('REST API')}}</span> </a>
                 </div>
@@ -95,7 +62,7 @@
                     <a href="{{url('table-datatable-edit')}}"><i class="ik ik-layout"></i><span>{{ __('Editable Datatable')}}</span>  </a>
 
                 </div>
-                <!-- end inventory pages -->
+               end inventory pages
 
                 <div class="nav-lavel">{{ __('Themekit Pages')}} </div>
                 <div class="nav-item {{ ($segment1 == 'form-components' || $segment1 == 'form-advance'||$segment1 == 'form-addon') ? 'active open' : '' }} has-sub">
@@ -208,7 +175,7 @@
                 </div>
                 <div class="nav-item">
                     <a href="javascript:void(0)" class="disabled"><i class="ik ik-slash"></i><span>{{ __('Disabled Menu')}}</span></a>
-                </div>
+                </div> -->
                 @endrole
         </div>
     </div>

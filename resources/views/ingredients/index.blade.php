@@ -7,7 +7,7 @@
  
 <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header"><h3>{{ __('Add Ingredient')}}</h3></div>
+                    <div class="card-header"><h3>{{ __('Add Raw Materials')}}</h3></div>
                     <div class="card-body">
                         <form class="forms-sample" action="{{route('ingredient.store')}}" method="post">
                         @csrf   
@@ -43,7 +43,7 @@
 <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header"><h3>{{ __('Ingredient')}}</h3></div>
+                    <div class="card-header"><h3>{{ __('Raw Materials')}}</h3></div>
                     <div class="card-body">
                     @if ($ingredients)
                         <table id="data_table" class="table">

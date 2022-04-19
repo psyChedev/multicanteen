@@ -55,8 +55,8 @@
                                    
                                     <td>
                                         <div class="table-actions float-left">
-                                        <a href="{{route('phi.add',$product)}}"><i class="ik ik-edit-2"></i></a>
-                                            <a href="#"><i class="ik ik-trash-2"></i></a>
+                                        <a href="{{route('phi.add',$product)}}"><button class="btn btn-primary">Add Product Recipe</button></a>
+                                            <!--<a href="#"><i class="ik ik-trash-2"></i></a>-->
                                         </div>
                                     </td>
                                 </tr>

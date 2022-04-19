@@ -14,23 +14,7 @@
     	<div class="row">
     		<!-- page statustic chart start -->
             @can('manage_canteen')
-            @foreach ($final_data as $key=>$value)
-            <div class="col-xl-3 col-md-6">
-                <div class="card card-blue text-white h-100">
-                    <div class="card-block">
-                        <div class="row align-items-center">
-                            <div class="col-8">
-                                <h4 class="mb-0">{{$value}}</h4>
-                                <p class="mb-0">{{$temp['product'][$key]->Product_Name}}</p>
-                            </div>
-                            <div class="col-4 text-right">
-                                <img src="{{$temp['product'][$key]->Product_Image}}" alt="" width=100% class=" rounded-circle">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            @endforeach
+           
             @endcan
                        <!-- page statustic chart end -->
             <!-- sale 2 card start 
